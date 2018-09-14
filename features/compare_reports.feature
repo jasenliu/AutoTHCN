@@ -7,12 +7,12 @@ Feature: Compare marjor reports
   Scenario: Upload data file
     When select the report cycle
     | report_cycle |
-    | 201806       |
+    | 201807       |
     And select the data type
     | data_type |
     | PATH+     |
     And upload the data file
-    | data_file                                                 |
+    | file_path                                                 |
     | D:\AutoTHCN\lib\data_file\excel_file\\Agency Bond_min.xls |
     And click upload data file button
     Then the uploaded file should be show in the PATH+ line
