@@ -44,4 +44,8 @@ class GenerateMonthlyQuarterlyReports
     alert_upload_data.accept if(alert_upload_data)
   end
 
+  def uploaded_file_link
+    @driver.find_element(:css => '#divETL > table > tbody > tr:nth-child(11) > td:nth-child(2) > span > a:nth-child(1)')
+  end
+
 end

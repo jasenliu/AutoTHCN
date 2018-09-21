@@ -34,7 +34,8 @@ And('click upload data file button') do
 end
 
 Then('the uploaded file should be show in the PATH+ line') do
-
+  uploaded_file_link = @generate_monthly_quarterly_reports.uploaded_file_link
+  expect(uploaded_file_link).to be_displayed
 end
 
 When('select required reports') do
