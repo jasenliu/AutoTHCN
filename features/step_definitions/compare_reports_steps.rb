@@ -39,5 +39,27 @@ Then('the uploaded file should be show in the PATH+ line') do
 end
 
 When('select required reports') do
+  @generate_monthly_quarterly_reports = GenerateMonthlyQuarterlyReports.new(@driver)
+  @generate_monthly_quarterly_reports.select_reports REPORT_LIST
+end
+
+And('click gerenate report button') do
+  @generate_monthly_quarterly_reports.generate_report
+end
+
+Then('the reports porgress bar are show on the page') do
+  report_progress = @generate_monthly_quarterly_reports.is_show_progress?
+  expect(report_progress).to be_displayed 
+end 
+
+When('check the report prgress and download the reports') do
+
+end
+
+Then('compare the reports') do
+
+end
+
+And('send the compare result') do
 
 end

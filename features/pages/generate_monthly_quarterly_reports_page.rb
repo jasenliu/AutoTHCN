@@ -38,6 +38,7 @@ class GenerateMonthlyQuarterlyReports
     @driver.find_element(:id => 'btnUploadDataFile').click
     begin
       alert_upload_data = @driver.switch_to.alert
+      puts alert_upload_data.text
     rescue
       alert_upload_data = false
     end
@@ -46,6 +47,31 @@ class GenerateMonthlyQuarterlyReports
 
   def uploaded_file_link
     @driver.find_element(:css => '#divETL > table > tbody > tr:nth-child(11) > td:nth-child(2) > span > a:nth-child(1)')
+  end
+
+  def select_reports(report_list)
+    report_check_list = @driver.find_element(:id => 'divClientSettingTemplateDetailContainer').find_elements(:css => "input[type='checkbox']")
+    report_check_list.each do |report_checkbox|
+      report_list.each do |report|
+	report_checkbox.click if report_checkbox.attribute('value') == report
+      end
+    end
+  end
+
+  def generate_report
+    @driver.find_element(:id => 'btnDataFileGenerateReport').click
+    begin
+      alert_non_interesting_setting = @driver.switch_to.alert
+      puts alert_non_interesting_setting.text
+    rescue
+      alert_non_interesting_setting = false
+    end
+    alert_non_interesting_setting.accept if(alert_non_interesting_setting)
+  end
+
+  def is_show_progress?
+    @driver.switch_to.frame('ReportProgress32') #EaR report progeress
+    report_progress = @driver.find_element(:id => 'divprogress0')
   end
 
 end
