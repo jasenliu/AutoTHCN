@@ -53,7 +53,9 @@ Then('the reports porgress bar are show on the page') do
 end 
 
 When('check the report prgress and download the reports') do
-
+  sleep(3)
+  @generate_monthly_quarterly_reports= GenerateMonthlyQuarterlyReports.new(@driver)
+  @generate_monthly_quarterly_reports.check_report_progress FRAME_REPORT_LIST_ID
 end
 
 Then('compare the reports') do

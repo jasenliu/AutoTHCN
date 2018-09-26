@@ -74,4 +74,33 @@ class GenerateMonthlyQuarterlyReports
     report_progress = @driver.find_element(:id => 'divprogress0')
   end
 
+  def check_report_progress(frame_report_list_id)
+    frame_report_list_id.each do |frame_id|
+      puts frame_id
+      @driver.switch_to.frame(frame_id)
+
+      begin
+	progress = @driver.find_element(:id => 'divprogress0')
+	report_error = @driver.find_element(:id => 'divReset')
+      rescue
+	progress = false
+	report_error = false
+      end
+
+      if progress
+	puts progress.text
+	next if report_error
+      else
+	if(frame_id == 'ReportProgress33_1') #cash flow report
+	  @driver.find_elements(:tag_name => 'img')[0].click
+	  sleep(2)
+	else
+	  @driver.find_element(:id => 'rpt_excel').click
+	  sleep(2)
+	end
+      end
+      @driver.switch_to.parent_frame
+    end
+  end
+
 end
