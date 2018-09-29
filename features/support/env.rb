@@ -1,0 +1,7 @@
+require 'selenium-webdriver'
+require 'find'
+require 'FileUtils'
+require 'win32ole'
+require 'erb'
+require 'mailfactory'
+require 'net/smtp'

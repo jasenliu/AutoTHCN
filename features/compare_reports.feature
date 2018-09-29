@@ -17,14 +17,17 @@ Feature: Compare marjor reports
     And click upload data file button
     Then the uploaded file should be show in the PATH+ line
 
+  @generate
   Scenario: Generate reports
     When select required reports
     And click gerenate report button
     Then the reports porgress bar are show on the page 
 
+  @compare
   Scenario: Download and compare reports
-    When download the reports
+    When check the report prgress and download the reports
     Then compare the reports
+    And send the compare result
  
 
   
