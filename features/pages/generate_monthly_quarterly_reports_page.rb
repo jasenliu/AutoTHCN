@@ -100,11 +100,14 @@ class GenerateMonthlyQuarterlyReports
 
       if(frame_report_list.size == 0)
 	flag = true
+	break
       end
 
       frame_report_list.each do |report_name, frame_id|
+	sleep(2)
+	puts "before switch:#{report_name},#{frame_id}"
 	@driver.switch_to.frame(frame_id)
-	puts "#{report_name},#{frame_id}"
+	puts "after switch:#{report_name},#{frame_id}"
 	begin
 	  progress = @driver.find_element(:id => 'divprogress0')
 	rescue
@@ -120,10 +123,9 @@ class GenerateMonthlyQuarterlyReports
 	if progress
 	  puts progress.text
 	  if report_error
-	    frame_report_list.delete(report_name)
 	    puts "#{report_name} has report error"
 	    $result_14.store(report_name, "#{progress.text} has error")
-	    next
+	    frame_report_list.delete(report_name)
 	  end
 	else
 	  if(frame_id == 'ReportProgress33_1') #cash flow report

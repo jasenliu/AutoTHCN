@@ -94,11 +94,9 @@ def compare_common_sheet(generate_report_path, benchmark_report_path, sheet_name
     # C:\Windows\SysWOW64\config\systemprofile\Desktop
     generate_report_sheet.saveas(diff_path)
     $result_14.store(report_name, "diff")
-    puts report_name
-    p $result_14
   else
     if $result_14[report_name] == 'diff' 
-      puts 'the report is diff'
+      puts "#{report_name} is diff"
     else
       $result_14.store(report_name, 'same')
     end
