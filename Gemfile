@@ -1,5 +1,4 @@
-:sources:
-- https://gems.ruby-china.com
+source "https://gems.ruby-china.com/"
 :ssl_verify_mode: 0
 #ruby '2.4.4', :patchlevel => '296'
 gem 'selenium-webdriver', '3.14.0'
