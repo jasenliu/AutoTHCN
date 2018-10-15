@@ -26,7 +26,7 @@ end
 
 And('upload the data file') do |table|
   file_path = table.hashes[0]['file_path']
-  file_path = file_path.sub('D:\AutoTHCN', "#{ROOT_Directory}").sub('/', '\\')
+  file_path = file_path.sub('D:\AutoTHCN', "#{ROOT_DIRECTORY}").sub('/', '\\')
   @generate_monthly_quarterly_reports.upload_PATH_file(file_path)
 end
 
