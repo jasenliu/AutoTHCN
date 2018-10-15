@@ -171,7 +171,6 @@ class GenerateMonthlyQuarterlyReports
   end
 
   def save_compare_report_result_to_excel
-    ip = Socket.ip_address_list[1].ip_address
     result_path = RESULT_REPORT_PATH + CURRENT_DAY + '/TestResult.xls'
     result_path = result_path.gsub(/\//, "\\\\")
     excel = open_excel(result_path, 'Sheet1')
@@ -187,6 +186,7 @@ class GenerateMonthlyQuarterlyReports
   end
 
   def send_compare_report_result
+    ip = Socket.ip_address_list[1].ip_address
     html = <<html_end
       <html>
 	<body>
