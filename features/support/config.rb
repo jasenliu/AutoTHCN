@@ -8,13 +8,14 @@
 #'Assumption Report' => 'cbxRptTpl_1070'
 #}
 
+ROOT_DIRECTORY = Dir.pwd
 DEFAULT_DOWNLOAD_DIRECTORY = "D:/download_test/"
-GENERATE_REPORT_PATH = 'D:/AutoTHCN/lib/report/generate_report/'
-BENCHMARK_REPORT_PATH = 'D:/AutoTHCN/lib/report/benchmark_report/'
-RESULT_REPORT_PATH = 'D:/AutoTHCN/lib/test_result/'
+GENERATE_REPORT_PATH = "#{ROOT_DIRECTORY}/lib/report/generate_report/"
+BENCHMARK_REPORT_PATH = "#{ROOT_DIRECTORY}/lib/report/benchmark_report/"
+RESULT_REPORT_PATH = "#{ROOT_DIRECTORY}/lib/test_result/"
 CURRENT_DAY = Time.now.strftime("%Y%m%d")
 SAVE_TIME = Time.now.strftime("%y%m%d_%H%M%S")
-ROOT_DIRECTORY = 'D:/AutoTHCN'
+#ROOT_DIRECTORY = 'D:/AutoTHCN'
 $result_14 = {}
 
 REPORT_LIST = [

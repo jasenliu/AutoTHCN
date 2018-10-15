@@ -96,6 +96,7 @@ class GenerateMonthlyQuarterlyReports
 	puts 'time is over'
 	$result_14.store('report over', 'genereated report time is over')
 	flag = true
+	break
       end
 
       if(frame_report_list.size == 0)
@@ -104,7 +105,7 @@ class GenerateMonthlyQuarterlyReports
       end
 
       frame_report_list.each do |report_name, frame_id|
-	sleep(2)
+	sleep(5)
 	puts "before switch:#{report_name},#{frame_id}"
 	@driver.switch_to.frame(frame_id)
 	puts "after switch:#{report_name},#{frame_id}"
@@ -121,7 +122,8 @@ class GenerateMonthlyQuarterlyReports
 	end
 
 	if progress
-	  puts progress.text
+	  #puts progress.text
+	  puts "#{report_name} is generating..."
 	  if report_error
 	    puts "#{report_name} has report error"
 	    $result_14.store(report_name, "#{progress.text} has error")
@@ -169,6 +171,7 @@ class GenerateMonthlyQuarterlyReports
   end
 
   def save_compare_report_result_to_excel
+    ip = Socket.ip_address_list[1].ip_address
     result_path = RESULT_REPORT_PATH + CURRENT_DAY + '/TestResult.xls'
     result_path = result_path.gsub(/\//, "\\\\")
     excel = open_excel(result_path, 'Sheet1')
@@ -204,13 +207,13 @@ class GenerateMonthlyQuarterlyReports
 		</tr>
 	      <% end %>
 	    </table>
-	    <a href='file:///\\192.168.0.21\\AutoTHCN\\lib\\report\\generate_report\\web14\\<%= CURRENT_DAY %>'>click here to view generate report</a>
+	    <a href='file:///\\#{ip}\\AutoTHCN\\lib\\report\\generate_report\\web14\\<%= CURRENT_DAY %>'>click here to view generate report</a>
 	    <br />
-	    <a href='file:///\\192.168.0.21\\AutoTHCN\\lib\\report\\benchmark_report\\web14\\exl'>click here to view benchmark report</a>
+	    <a href='file:///\\#{ip}\\AutoTHCN\\lib\\report\\benchmark_report\\web14\\exl'>click here to view benchmark report</a>
 	    <br />
-	    <a href='file:///\\192.168.0.21\\AutoTHCN\\lib\\data_file\\excel_file'>click here to view benchmark file</a>
+	    <a href='file:///\\#{ip}\\AutoTHCN\\lib\\data_file\\excel_file'>click here to view benchmark file</a>
 	    <br />
-	    <a href='file:///\\192.168.0.21\\AutoTHCN\\lib\\test_result\\<%= CURRENT_DAY %>'>click here to view diff report</a> 
+	    <a href='file:///\\#{ip}\\AutoTHCN\\lib\\test_result\\<%= CURRENT_DAY %>'>click here to view diff report</a> 
 	  </body>
 	</html>
 html_end

@@ -13,7 +13,7 @@ Feature: Compare marjor reports
     | PATH+     |
     And upload the data file
     | file_path                                                 |
-    | D:\AutoTHCN\lib\data_file\excel_file\\Agency Bond_min.xls |
+    | D:\AutoTHCN\lib\data_file\excel_file\test.xlsx |
     And click upload data file button
     Then the uploaded file should be show in the PATH+ line
 
