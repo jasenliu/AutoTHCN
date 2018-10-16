@@ -4,6 +4,7 @@ Feature: Compare marjor reports
   Background: 
     Given I am on the generate report page
 
+  @upload
   Scenario: Upload data file
     When select the report cycle
     | report_cycle |
