@@ -16,7 +16,7 @@ class GenerateMonthlyQuarterlyReports
     #Selector = Selenium::WebDriver::Support::Select
     cycle = @driver.find_element(:id => 'selALMBankDataFileCycle')
     selector_cycle = Selector.new cycle
-    puts 'cycle:#{report_cycle}'
+    puts "cycle:#{report_cycle}"
     selector_cycle.select_by(:text, report_cycle)
   end
 
@@ -92,7 +92,7 @@ class GenerateMonthlyQuarterlyReports
     begin_time = Time.now.to_i
     until flag
       end_time = Time.now.to_i
-      if(end_time - begin_time > 1800)
+      if(end_time - begin_time > 3000)
 	puts 'time is over'
 	$result_14.store('report over', 'genereated report time is over')
 	flag = true
