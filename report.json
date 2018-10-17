@@ -1,0 +1,116 @@
+[
+  {
+    "uri": "./features/compare_reports.feature",
+    "id": "compare-marjor-reports",
+    "keyword": "Feature",
+    "name": "Compare marjor reports",
+    "description": "  Make sure the major reports worked correctly",
+    "line": 1,
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 4,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3481310373
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the generate report page",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13711794081
+            }
+          }
+        ]
+      },
+      {
+        "id": "compare-marjor-reports;generate-reports",
+        "keyword": "Scenario",
+        "name": "Generate reports",
+        "description": "",
+        "line": 21,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@generate",
+            "line": 20
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "select required reports",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2208289628
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "click gerenate report button",
+            "line": 23,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8226374128
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the reports porgress bar are show on the page",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5063277421
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24564
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 103874972
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
