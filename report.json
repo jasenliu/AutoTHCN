@@ -20,7 +20,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3481310373
+              "duration": 3501098981
             }
           }
         ],
@@ -34,59 +34,67 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13711794081
+              "duration": 22476221885
             }
           }
         ]
       },
       {
-        "id": "compare-marjor-reports;generate-reports",
+        "id": "compare-marjor-reports;download-and-compare-reports",
         "keyword": "Scenario",
-        "name": "Generate reports",
+        "name": "Download and compare reports",
         "description": "",
-        "line": 21,
+        "line": 28,
         "type": "scenario",
         "tags": [
           {
-            "name": "@generate",
-            "line": 20
+            "name": "@compare",
+            "line": 27
           }
         ],
         "steps": [
           {
             "keyword": "When ",
-            "name": "select required reports",
-            "line": 22,
+            "name": "check the report prgress and download the reports",
+            "line": 29,
+            "output": [
+              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)-Base_Real_Cash_Flow_181019_181546.xls",
+              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_EVE_181019_181546.xls",
+              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_EaR_181019_181546.xlsx",
+              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_KRD_181019_181546.xls",
+              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_Liquidity_GAP_181019_181546.xls",
+              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_Two_Cycles_Comparison_181019_181546.xlsx"
+            ],
             "match": {
-              "location": "features/step_definitions/compare_reports_steps.rb:42"
+              "location": "features/step_definitions/compare_reports_steps.rb:56"
             },
             "result": {
               "status": "passed",
-              "duration": 2208289628
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "click gerenate report button",
-            "line": 23,
-            "match": {
-              "location": "features/step_definitions/compare_reports_steps.rb:47"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 8226374128
+              "duration": 43873892816
             }
           },
           {
             "keyword": "Then ",
-            "name": "the reports porgress bar are show on the page",
-            "line": 24,
+            "name": "compare the reports",
+            "line": 30,
             "match": {
-              "location": "features/step_definitions/compare_reports_steps.rb:51"
+              "location": "features/step_definitions/compare_reports_steps.rb:62"
             },
             "result": {
               "status": "passed",
-              "duration": 5063277421
+              "duration": 161265663904
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "send the compare result",
+            "line": 31,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 181603936
             }
           }
         ],
@@ -97,7 +105,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24564
+              "duration": 30064
             }
           },
           {
@@ -106,7 +114,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 103874972
+              "duration": 178736872
             }
           }
         ]

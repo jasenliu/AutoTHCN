@@ -161,11 +161,14 @@ class GenerateMonthlyQuarterlyReports
       generate_report_path = file
       #benchmark_report_path = benchmark_report_path.gsub(/\//, "\\\\")
       #generate_report_path = file.gsub(/\//, "\\\\")
-      arr_sheet = get_sheet_names(file)
-      arr_sheet.each do |sheet_name|
-	next if sheet_name == 'DISCLAIMER'
-	compare_common_sheet(generate_report_path, benchmark_report_path, sheet_name)
-      end
+
+      #arr_sheet = get_sheet_names(file)
+      #arr_sheet.each do |sheet_name|
+      #	next if sheet_name == 'DISCLAIMER'
+      #	compare_common_sheet(generate_report_path, benchmark_report_path, sheet_name)
+      #end
+      
+      compare_common_sheet(generate_report_path, benchmark_report_path)
     end
 
   end
@@ -173,7 +176,8 @@ class GenerateMonthlyQuarterlyReports
   def save_compare_report_result_to_excel
     result_path = RESULT_REPORT_PATH + CURRENT_DAY + '/TestResult.xls'
     result_path = result_path.gsub(/\//, "\\\\")
-    excel = open_excel(result_path, 'Sheet1')
+    excel = open_excel(result_path)
+    excel = excel.worksheets('Sheet1')
     excel.activate
     i = 1
     $result_14.each do |key, value|
@@ -219,7 +223,7 @@ class GenerateMonthlyQuarterlyReports
 html_end
 
     erb = ERB.new(html)
-    send_email('qa@thc.net.cn', 'only for test', erb.result(binding))
+    send_email('eng-thc@thc.net.cn', 'ThcDecisions Compare finished', erb.result(binding))
   end
 
 end

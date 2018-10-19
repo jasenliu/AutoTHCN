@@ -24,8 +24,8 @@ REPORT_LIST = [
   'Expected Monthly NII Analysis',
   'Expected Gap Analysis',
   'Real Cash Flow',
-  'Two Cycles Comparison',
-  'Assumption Report' 
+  'Two Cycles Comparison'
+  #'Assumption Report' --this report can not saveas
 ]
 
 FRAME_REPORT_LIST = {
@@ -34,8 +34,8 @@ FRAME_REPORT_LIST = {
   'Expected Monthly NII Analysis' => 'ReportProgress32',
   'Expected Gap Analysis' => 'ReportProgress28_1',
   'Real Cash Flow' => 'ReportProgress33_1',
-  'Two Cycles Comparison' => 'ReportProgress106',
-  'Assumption Report' => 'ReportProgress107'
+  'Two Cycles Comparison' => 'ReportProgress106'
+  #'Assumption Report' => 'ReportProgress107'
 }
 
 FRAME_REPORT_LIST_ID = [
@@ -44,7 +44,7 @@ FRAME_REPORT_LIST_ID = [
   'ReportProgress32',
   'ReportProgress28_1',
   'ReportProgress33_1',
-  'ReportProgress106',
-  'ReportProgress107'
+  'ReportProgress106'
+  #'ReportProgress107'
 ]
 
