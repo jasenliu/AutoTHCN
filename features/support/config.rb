@@ -31,20 +31,20 @@ REPORT_LIST = [
 FRAME_REPORT_LIST = {
   'Interest Rate Risk (EVE)' => 'ReportProgress14',
   'Key Rate Duration' => 'ReportProgress18',
-  'Expected Monthly NII Analysis' => 'ReportProgress32',
-  'Expected Gap Analysis' => 'ReportProgress28_1',
-  'Real Cash Flow' => 'ReportProgress33_1',
-  'Two Cycles Comparison' => 'ReportProgress106'
+  'Expected Monthly NII Analysis' => 'ReportProgress33',
+  'Expected Gap Analysis' => 'ReportProgress29_1',
+  'Real Cash Flow' => 'ReportProgress34_1',
+  'Two Cycles Comparison' => 'ReportProgress107'
   #'Assumption Report' => 'ReportProgress107'
 }
 
 FRAME_REPORT_LIST_ID = [
   'ReportProgress14',
   'ReportProgress18',
-  'ReportProgress32',
-  'ReportProgress28_1',
-  'ReportProgress33_1',
-  'ReportProgress106'
+  'ReportProgress33',
+  'ReportProgress29_1',
+  'ReportProgress34_1',
+  'ReportProgress107'
   #'ReportProgress107'
 ]
 
