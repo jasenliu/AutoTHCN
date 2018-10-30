@@ -83,7 +83,7 @@ class GenerateMonthlyQuarterlyReports
   def is_show_progress?
     #wait_for(30) { @driver.switch_to.frame('ReportProgress32') }
     sleep(5)
-    @driver.switch_to.frame('ReportProgress32') #EaR report progeress
+    @driver.switch_to.frame('ReportProgress33') #EaR report progeress
     report_progress = @driver.find_element(:id => 'divprogress0')
   end
 
