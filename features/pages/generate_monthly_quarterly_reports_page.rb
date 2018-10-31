@@ -130,7 +130,7 @@ class GenerateMonthlyQuarterlyReports
 	    frame_report_list.delete(report_name)
 	  end
 	else
-	  if(frame_id == 'ReportProgress33_1') #cash flow report
+	  if(frame_id == 'ReportProgress34_1') #cash flow report
 	    @driver.find_elements(:tag_name => 'img')[1].click
 	    sleep(2)
 	    frame_report_list.delete(report_name)
