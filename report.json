@@ -20,7 +20,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3501098981
+              "duration": 3533833737
             }
           }
         ],
@@ -34,7 +34,276 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22476221885
+              "duration": 17251854334
+            }
+          }
+        ]
+      },
+      {
+        "id": "compare-marjor-reports;upload-data-file",
+        "keyword": "Scenario",
+        "name": "Upload data file",
+        "description": "",
+        "line": 8,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@upload",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "select the report cycle",
+            "line": 9,
+            "rows": [
+              {
+                "cells": [
+                  "report_cycle"
+                ]
+              },
+              {
+                "cells": [
+                  "201809"
+                ]
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 107905360
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "select the data type",
+            "line": 12,
+            "rows": [
+              {
+                "cells": [
+                  "data_type"
+                ]
+              },
+              {
+                "cells": [
+                  "PATH+"
+                ]
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 84955283
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "upload the data file",
+            "line": 15,
+            "rows": [
+              {
+                "cells": [
+                  "file_path"
+                ]
+              },
+              {
+                "cells": [
+                  "D:\\AutoTHCN\\lib\\data_file\\excel_file\\benchmark_201809.xls"
+                ]
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51727406
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "click upload data file button",
+            "line": 18,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 201848267
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the uploaded file should be show in the PATH+ line",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10282030366
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21631
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 102921729
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 4,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3500521168
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the generate report page",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15709389341
+            }
+          }
+        ]
+      },
+      {
+        "id": "compare-marjor-reports;generate-reports",
+        "keyword": "Scenario",
+        "name": "Generate reports",
+        "description": "",
+        "line": 22,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@generate",
+            "line": 21
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "select required reports",
+            "line": 23,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1831474569
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "click gerenate report button",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8224709984
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the reports porgress bar are show on the page",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:51"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "no such frame\n  (Session info: chrome=69.0.3497.100)\n  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (Selenium::WebDriver::Error::NoSuchFrameError)\n./features/pages/generate_monthly_quarterly_reports_page.rb:86:in `is_show_progress?'\n./features/step_definitions/compare_reports_steps.rb:52:in `\"the reports porgress bar are show on the page\"'\n./features/compare_reports.feature:25:in `Then the reports porgress bar are show on the page'",
+              "duration": 5011945245
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32997
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 100200952
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 4,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3544417309
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the generate report page",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/compare_reports_steps.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17548992513
             }
           }
         ]
@@ -57,20 +326,13 @@
             "keyword": "When ",
             "name": "check the report prgress and download the reports",
             "line": 29,
-            "output": [
-              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)-Base_Real_Cash_Flow_181019_181546.xls",
-              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_EVE_181019_181546.xls",
-              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_EaR_181019_181546.xlsx",
-              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_KRD_181019_181546.xls",
-              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_Liquidity_GAP_181019_181546.xls",
-              "D:/AutoTHCN/lib/report/generate_report/web14/20181019/jsliu__bank_test_&_city_(HF)(201809)_Two_Cycles_Comparison_181019_181546.xlsx"
-            ],
             "match": {
               "location": "features/step_definitions/compare_reports_steps.rb:56"
             },
             "result": {
-              "status": "passed",
-              "duration": 43873892816
+              "status": "failed",
+              "error_message": "no such frame\n  (Session info: chrome=69.0.3497.100)\n  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (Selenium::WebDriver::Error::NoSuchFrameError)\n./features/pages/generate_monthly_quarterly_reports_page.rb:110:in `block in check_report_progress'\n./features/pages/generate_monthly_quarterly_reports_page.rb:107:in `each'\n./features/pages/generate_monthly_quarterly_reports_page.rb:107:in `check_report_progress'\n./features/step_definitions/compare_reports_steps.rb:58:in `\"check the report prgress and download the reports\"'\n./features/compare_reports.feature:29:in `When check the report prgress and download the reports'",
+              "duration": 15262431674
             }
           },
           {
@@ -81,8 +343,7 @@
               "location": "features/step_definitions/compare_reports_steps.rb:62"
             },
             "result": {
-              "status": "passed",
-              "duration": 161265663904
+              "status": "skipped"
             }
           },
           {
@@ -93,8 +354,7 @@
               "location": "features/step_definitions/compare_reports_steps.rb:67"
             },
             "result": {
-              "status": "passed",
-              "duration": 181603936
+              "status": "skipped"
             }
           }
         ],
@@ -105,7 +365,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 30064
+              "duration": 21631
             }
           },
           {
@@ -114,7 +374,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 178736872
+              "duration": 91225428
             }
           }
         ]
