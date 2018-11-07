@@ -4,8 +4,12 @@ Given('I am on the generate report page') do
   username = 'user80008'
   password = 'test.test'
 
+  @driver.get url
+  @driver.find_element(:link => "Log In").click 
+  sleep(2)
+
   @login = LoginPage.new(@driver)
-  @login.visit url
+  #@login.visit url
   @login.login(username, password)
   
   @left_panel = LeftPanelPage.new(@driver)
