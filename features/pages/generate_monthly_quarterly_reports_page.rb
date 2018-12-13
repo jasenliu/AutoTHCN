@@ -92,7 +92,7 @@ class GenerateMonthlyQuarterlyReports
     begin_time = Time.now.to_i
     until flag
       end_time = Time.now.to_i
-      if(end_time - begin_time > 3000)
+      if(end_time - begin_time > 6000)
 	puts 'time is over'
 	$result_14.store('report over', 'genereated report time is over')
 	flag = true
