@@ -50,7 +50,7 @@ class GenerateMonthlyQuarterlyReports
   end
 
   def uploaded_file_link
-    @driver.find_element(:css => '#divETL > table > tbody > tr:nth-child(11) > td:nth-child(2) > span > a:nth-child(1)')
+    @driver.find_element(:css => '#divETL > table > tbody > tr:nth-child(2) > td:nth-child(2) > span > a:nth-child(1)')
   end
 
   def select_reports(report_list)
