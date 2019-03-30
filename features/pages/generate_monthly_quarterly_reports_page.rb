@@ -50,7 +50,7 @@ class GenerateMonthlyQuarterlyReports
   end
 
   def uploaded_file_link
-    @driver.find_element(:css => '#divETL > table > tbody > tr:nth-child(11) > td:nth-child(2) > span > a:nth-child(1)')
+    @driver.find_element(:css => '#divETL > table > tbody > tr:nth-child(2) > td:nth-child(2) > span > a:nth-child(1)')
   end
 
   def select_reports(report_list)
@@ -76,8 +76,13 @@ class GenerateMonthlyQuarterlyReports
     #wait.until { @driver.switch_to.alert.displayed?}
     #wait_for(30) { @driver.switch_to.alert.accept }
     sleep(8)
-    alert_generate_success = @driver.switch_to.alert
-    alert_generate_success.accept 
+    begin
+      alert_generate_success = @driver.switch_to.alert
+      puts alert_generate_success.text
+    rescue
+      alert_generate_success = false
+    end
+    alert_generate_success.accept if alert_generate_success
   end
 
   def is_show_progress?
@@ -92,7 +97,7 @@ class GenerateMonthlyQuarterlyReports
     begin_time = Time.now.to_i
     until flag
       end_time = Time.now.to_i
-      if(end_time - begin_time > 3000)
+      if(end_time - begin_time > 6000)
 	puts 'time is over'
 	$result_14.store('report over', 'genereated report time is over')
 	flag = true

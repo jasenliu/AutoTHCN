@@ -14,7 +14,7 @@ class LoginPage
     @driver.find_element(:name, "submit").click
   end
   
-  private
+  #private
   
   def username=(username) 
     @driver.find_element(:id => "lgnName").send_keys username
