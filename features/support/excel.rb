@@ -65,7 +65,7 @@ def compare_common_sheet(generate_report_path, benchmark_report_path)
     #puts "benchmark_columu_count:#{benchmark_columu_count}" 
 
     base_name = File.basename(generate_report_path, '.*')
-    report_name = base_name.sub(/_\d+_\d+/, '')
+    report_name = File.basename(benchmark_report_path, '.*')
 
     if(generate_row_count != benchmark_row_count || generate_column_count != benchmark_columu_count)
       diff_flag = true
