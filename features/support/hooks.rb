@@ -6,8 +6,15 @@ Before do
   }
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_preference(:download, prefs)
-  @driver = Selenium::WebDriver.for :chrome, options:options
+
+  #handle Net::ReadTimeout (Net::ReadTimeout)
+  client = Selenium::WebDriver::Remote::Http::Default.new
+  client.read_timeout = 300 # seconds
+  client.open_timeout = 300 # seconds
+
+  @driver = Selenium::WebDriver.for(:chrome, options: options, http_client: client) 
   @driver.manage.window.maximize
+
   init_folder(ROOT_DIRECTORY)
 end
 
