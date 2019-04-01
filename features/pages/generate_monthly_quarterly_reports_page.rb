@@ -154,6 +154,7 @@ class GenerateMonthlyQuarterlyReports
   def compare_report(generate_report_path, benchmark_report_path)
     generate_report_folder = generate_report_path + 'web14/' + CURRENT_DAY
     benchmark_report_folder = benchmark_report_path + 'web14/' + 'exl/' 
+    $result_14 = {}
     Find.find(generate_report_folder) do |file|
       next if File.directory?(file) 
       next if (Time.now.to_i - File.atime(file).to_i > 120)
