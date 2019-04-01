@@ -10,6 +10,7 @@ class SmartToolPage
   'Borrowings',
   'Other Liabilities'
 ] 
+
   def initialize(driver)
     @driver = driver
   end
@@ -92,7 +93,7 @@ class SmartToolPage
         sleep(1)
         file_name = file.text
         puts "file_name:#{file_name}"
-        next if file_name == '+'
+        next if (file_name == '+' || file_name.include?('New'))
         file.click
         sleep(1)
 
@@ -153,6 +154,7 @@ class SmartToolPage
   def compare_smart_tool_pathfile(generate_report_path, benchmark_report_path)
     generate_report_folder = generate_report_path + 'web14/' + CURRENT_DAY
     benchmark_report_folder = benchmark_report_path + 'web14/' + 'smart_tool/' 
+    $result_14 = {}
     Find.find(generate_report_folder) do |file|
       next if File.directory?(file) 
       next if (Time.now.to_i - File.atime(file).to_i > 120)
