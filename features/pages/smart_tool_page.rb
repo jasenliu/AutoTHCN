@@ -132,7 +132,7 @@ class SmartToolPage
     self.get_download_pathbook_button.click
 
     begin
-      alert_not_save = driver.switch_to.alert
+      alert_not_save = @driver.switch_to.alert
       puts alert_not_save.text
     rescue
       alert_not_save = false
@@ -141,13 +141,13 @@ class SmartToolPage
     sleep(1)
 
     begin
-      alert_have_error = driver.switch_to.alert
+      alert_have_error = @driver.switch_to.alert
       puts alert_have_error.text
     rescue
       alert_have_error = false
     end
     alert_have_error.accept if alert_have_error
-    sleep(10)
+    sleep(20)
     
   end
 
@@ -157,7 +157,7 @@ class SmartToolPage
     $result_14 = {}
     Find.find(generate_report_folder) do |file|
       next if File.directory?(file) 
-      next if (Time.now.to_i - File.atime(file).to_i > 120)
+      next if (Time.now.to_i - File.atime(file).to_i > 600) #10min
       file_name = File.basename(file, '.*')
       file_name = file_name.sub(/_\d+_\d+_\d+/, '')
       ext = File.extname(file)
