@@ -75,7 +75,7 @@ class GenerateMonthlyQuarterlyReports
     #wait = Selenium::WebDriver::Wait.new({:timeout => 30})
     #wait.until { @driver.switch_to.alert.displayed?}
     #wait_for(30) { @driver.switch_to.alert.accept }
-    sleep(8)
+    #sleep(8)
     begin
       alert_generate_success = @driver.switch_to.alert
       puts alert_generate_success.text

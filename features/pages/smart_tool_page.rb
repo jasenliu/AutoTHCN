@@ -155,9 +155,12 @@ class SmartToolPage
     generate_report_folder = generate_report_path + 'web14/' + CURRENT_DAY
     benchmark_report_folder = benchmark_report_path + 'web14/' + 'smart_tool/' 
     $result_14 = {}
+    start_compare_time = Time.now.to_i
     Find.find(generate_report_folder) do |file|
       next if File.directory?(file) 
-      next if (Time.now.to_i - File.atime(file).to_i > 600) #10min
+      file_modify_time = File.mtime(file).to_i
+      time_difference = start_compare_time - file_modify_time
+      next if (time_difference > 30)
       file_name = File.basename(file, '.*')
       file_name = file_name.sub(/_\d+_\d+_\d+/, '')
       ext = File.extname(file)

@@ -23,5 +23,6 @@ After do
 end
 
 After do |scenario|
-
+  screen_path = SCREENSHOT_PATH + scenario.name + '_' + SAVE_TIME + '.png'
+  @driver.save_screenshot(screen_path) if scenario.failed?
 end

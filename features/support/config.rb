@@ -15,6 +15,7 @@ BENCHMARK_REPORT_PATH = "#{ROOT_DIRECTORY}/lib/report/benchmark_report/"
 RESULT_REPORT_PATH = "#{ROOT_DIRECTORY}/lib/test_result/"
 CURRENT_DAY = Time.now.strftime("%Y%m%d")
 SAVE_TIME = Time.now.strftime("%y%m%d_%H%M%S")
+SCREENSHOT_PATH = "#{ROOT_DIRECTORY}/lib/screenshot/" 
 #ROOT_DIRECTORY = 'D:/AutoTHCN'
 $result_14 = {}
 
