@@ -68,27 +68,28 @@ class GenerateMonthlyQuarterlyReports
       alert_non_interesting_setting = @driver.switch_to.alert
       puts alert_non_interesting_setting.text
     rescue
-      alert_non_interesting_setting = false
+      retry if !alert_non_interesting_setting
     end
     alert_non_interesting_setting.accept if alert_non_interesting_setting
 
-    #wait = Selenium::WebDriver::Wait.new({:timeout => 30})
-    #wait.until { @driver.switch_to.alert.displayed?}
-    #wait_for(30) { @driver.switch_to.alert.accept }
-    #sleep(8)
     begin
       alert_generate_success = @driver.switch_to.alert
       puts alert_generate_success.text
     rescue
-      alert_generate_success = false
+      retry if !alert_generate_success
     end
     alert_generate_success.accept if alert_generate_success
   end
 
   def is_show_progress?
-    #wait_for(30) { @driver.switch_to.frame('ReportProgress32') }
-    sleep(5)
-    @driver.switch_to.frame('ReportProgress33') #EaR report progeress
+    start_time = Time.now.to_i
+    begin
+      @driver.switch_to.frame('ReportProgress33') #EaR report progeress
+    rescue
+      end_time =  Time.now.to_i
+      difference_time = end_time - start_time 
+      retry if difference_time < 60
+    end
     report_progress = @driver.find_element(:id => 'divprogress0')
   end
 
