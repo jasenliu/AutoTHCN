@@ -65,9 +65,9 @@ end
 
 Then('compare the reports') do
   @generate_monthly_quarterly_reports.compare_report(GENERATE_REPORT_PATH, BENCHMARK_REPORT_PATH)
-  @generate_monthly_quarterly_reports.save_compare_report_result_to_excel
+  save_compare_report_result_to_excel
 end
 
 And('send the compare result') do
-  @generate_monthly_quarterly_reports.send_compare_report_result
+  send_compare_report_result
 end
