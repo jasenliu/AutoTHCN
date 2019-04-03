@@ -156,9 +156,12 @@ class GenerateMonthlyQuarterlyReports
     generate_report_folder = generate_report_path + 'web14/' + CURRENT_DAY
     benchmark_report_folder = benchmark_report_path + 'web14/' + 'exl/' 
     $result_14 = {}
+    start_compare_time = Time.now.to_i
     Find.find(generate_report_folder) do |file|
       next if File.directory?(file) 
-      next if (Time.now.to_i - File.atime(file).to_i > 120)
+      file_modify_time = File.mtime(file).to_i
+      time_difference = start_compare_time - file_modify_time
+      next if (time_difference > 30)
       file_name = File.basename(file, '.*')
       file_name = file_name.sub(/_\d+_\d+/, '')
       regex = /(\d+)/
@@ -178,59 +181,6 @@ class GenerateMonthlyQuarterlyReports
       compare_common_sheet(generate_report_path, benchmark_report_path)
     end
 
-  end
-
-  def save_compare_report_result_to_excel
-    result_path = RESULT_REPORT_PATH + CURRENT_DAY + '/TestResult.xls'
-    result_path = result_path.gsub(/\//, "\\\\")
-    excel = open_excel(result_path)
-    excel = excel.worksheets('Sheet1')
-    excel.activate
-    i = 1
-    $result_14.each do |key, value|
-      i += 1
-      excel.cells(i, 1).value = key
-      excel.cells(i, 2).value = value
-    end
-    excel.saveas(result_path)
-    close_excel
-  end
-
-  def send_compare_report_result
-    ip = Socket.ip_address_list[1].ip_address
-    html = <<html_end
-      <html>
-	<body>
-	  The following is the result:
-	  <table border="1" cellspacing="1" cellpadding="1">
-	    <tr>
-	      <td>Report</td>
-	      <td>WEB14</td>
-	    </tr>
-	    <% $result_14.each do |key, value| %>
-	      <tr>
-		<td><%= key %></td>
-		  <% if value == 'same' %>
-		    <td style='color:green'><%= value %></td>
-		  <% else %>
-		    <td style='color:red'><%= value %></td>
-		  <% end %>
-		</tr>
-	      <% end %>
-	    </table>
-	    <a href='file:///\\#{ip}\\AutoTHCN\\lib\\report\\generate_report\\web14\\<%= CURRENT_DAY %>'>click here to view generate report</a>
-	    <br />
-	    <a href='file:///\\#{ip}\\AutoTHCN\\lib\\report\\benchmark_report\\web14\\exl'>click here to view benchmark report</a>
-	    <br />
-	    <a href='file:///\\#{ip}\\AutoTHCN\\lib\\data_file\\excel_file'>click here to view benchmark file</a>
-	    <br />
-	    <a href='file:///\\#{ip}\\AutoTHCN\\lib\\test_result\\<%= CURRENT_DAY %>'>click here to view diff report</a> 
-	  </body>
-	</html>
-html_end
-
-    erb = ERB.new(html)
-    send_email('eng-thc@thc.net.cn', 'ThcDecisions Compare finished', erb.result(binding))
   end
 
 end
