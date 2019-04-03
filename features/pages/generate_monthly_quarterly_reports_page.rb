@@ -88,6 +88,8 @@ class GenerateMonthlyQuarterlyReports
     rescue
       end_time =  Time.now.to_i
       difference_time = end_time - start_time 
+      puts "dirrenence_time:"
+      puts difference_time
       retry if difference_time < 100
     end
     report_progress = @driver.find_element(:id => 'divprogress0')
