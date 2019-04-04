@@ -67,32 +67,31 @@ class GenerateMonthlyQuarterlyReports
     begin
       alert_non_interesting_setting = @driver.switch_to.alert
       puts alert_non_interesting_setting.text
+      alert_non_interesting_setting.accept
     rescue
       retry if !alert_non_interesting_setting
     end
-    alert_non_interesting_setting.accept if alert_non_interesting_setting
 
     begin
       alert_generate_success = @driver.switch_to.alert
       puts alert_generate_success.text
+      alert_generate_success.accept
     rescue
       retry if !alert_generate_success
     end
-    alert_generate_success.accept if alert_generate_success
+
   end
 
   def is_show_progress?
     start_time = Time.now.to_i
     begin
       @driver.switch_to.frame('ReportProgress33') #EaR report progeress
+      report_progress = @driver.find_element(:id => 'divprogress0')
     rescue
       end_time =  Time.now.to_i
       difference_time = end_time - start_time 
-      puts "dirrenence_time:"
-      puts difference_time
-      retry if difference_time < 100
+      retry if difference_time < 60
     end
-    report_progress = @driver.find_element(:id => 'divprogress0')
   end
 
   def check_report_progress(frame_report_list)
