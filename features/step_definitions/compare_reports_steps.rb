@@ -53,8 +53,8 @@ And('click gerenate report button') do
 end
 
 Then('the reports porgress bar are show on the page') do
-  report_progress = @generate_monthly_quarterly_reports.is_show_progress?
-  expect(report_progress).to be_displayed 
+  report_progress = @generate_monthly_quarterly_reports.is_show_progress?.displayed?
+  expect(report_progress).to be true
 end 
 
 When('check the report prgress and download the reports') do
