@@ -79,6 +79,7 @@ class GenerateMonthlyQuarterlyReports
     rescue
       retry if !alert_generate_success
     end
+    sleep(3)
 
   end
 
@@ -90,7 +91,8 @@ class GenerateMonthlyQuarterlyReports
     rescue
       end_time =  Time.now.to_i
       difference_time = end_time - start_time 
-      retry if difference_time < 60
+      puts "difference_time:#{difference_time}"
+      retry if difference_time < 30
     end
   end
 

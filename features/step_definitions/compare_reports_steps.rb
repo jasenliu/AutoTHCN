@@ -53,17 +53,8 @@ And('click gerenate report button') do
 end
 
 Then('the reports porgress bar are show on the page') do
-  begin_time = Time.now.to_i
-  begin
-    end_time = Time.now.to_i
-    diff_time = end_time - begin_time
-    puts "diff_time:#{diff_time}"
-    report_progress = @generate_monthly_quarterly_reports.is_show_progress?.displayed?
-  rescue
-    retry if diff_time < 20
-  end
+  report_progress = @generate_monthly_quarterly_reports.is_show_progress?.displayed?
   expect(report_progress).to be true
-
 end 
 
 When('check the report prgress and download the reports') do
