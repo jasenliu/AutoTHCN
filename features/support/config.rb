@@ -9,7 +9,7 @@
 #}
 
 ROOT_DIRECTORY = Dir.pwd
-DEFAULT_DOWNLOAD_DIRECTORY = "D:/download_test/"
+DEFAULT_DOWNLOAD_DIRECTORY = "#{ROOT_DIRECTORY}/lib/temp_download_directory/"
 GENERATE_REPORT_PATH = "#{ROOT_DIRECTORY}/lib/report/generate_report/"
 BENCHMARK_REPORT_PATH = "#{ROOT_DIRECTORY}/lib/report/benchmark_report/"
 RESULT_REPORT_PATH = "#{ROOT_DIRECTORY}/lib/test_result/"
