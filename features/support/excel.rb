@@ -1,7 +1,7 @@
 def open_excel(file_path)
   excel = WIN32OLE::new('excel.Application')
   excel.displayalerts = false
-  excel.visible = true
+  excel.visible = false
   excel_file = excel.workbooks.open(file_path)
 end
 
