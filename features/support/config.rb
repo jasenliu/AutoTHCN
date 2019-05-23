@@ -24,9 +24,11 @@ REPORT_LIST = [
   'Key Rate Duration',
   'Expected Monthly NII Analysis',
   'Expected Gap Analysis',
+  'Portfolio Analytics',
   'Real Cash Flow',
-  'Two Cycles Comparison'
-  #'Assumption Report' --this report can not saveas
+  'Two Cycles Comparison',
+  #'Assumption Report', --this report can not saveas
+  'Mortgage Portfolio Analytics'
 ]
 
 FRAME_REPORT_LIST = {
@@ -34,9 +36,11 @@ FRAME_REPORT_LIST = {
   'Key Rate Duration' => 'ReportProgress18',
   'Expected Monthly NII Analysis' => 'ReportProgress33',
   'Expected Gap Analysis' => 'ReportProgress29_1',
+  'Portfolio Analytics' => 'ReportProgress4',
   'Real Cash Flow' => 'ReportProgress34_1',
-  'Two Cycles Comparison' => 'ReportProgress107'
-  #'Assumption Report' => 'ReportProgress107'
+  'Two Cycles Comparison' => 'ReportProgress107',
+  #'Assumption Report' => 'ReportProgress107',
+  'Mortgage Portfolio Analytics' => 'ReportProgress96'
 }
 
 FRAME_REPORT_LIST_ID = [
