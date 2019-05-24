@@ -1,6 +1,6 @@
 Given /^login the web site$/ do
   url = 'http://192.168.0.14'
-  username = 'ljs'
+  username = 'jdq'
   password = '1'
 
   @driver.get url
