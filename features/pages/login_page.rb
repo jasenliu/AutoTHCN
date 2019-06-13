@@ -17,7 +17,7 @@ class LoginPage
   #private
   
   def username=(username) 
-    @driver.find_element(:id => "lgnName").send_keys username
+    @driver.find_element(:name => "lgnName").send_keys username
   end
 
   def password=(password)
