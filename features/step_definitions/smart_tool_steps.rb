@@ -4,8 +4,11 @@ Given /^login the web site$/ do
   password = '1'
 
   @driver.get url
-  @driver.find_element(:link => "Log In").click 
-  sleep(2)
+  #@driver.find_element(:link => "Log In").click 
+  #sleep(2)
+  login_link = @driver.find_element(:id => 'menu-item-181')
+  @driver.action.move_to(login_link).perform
+  @driver.find_element(:link => 'Login').click
 
   @login = LoginPage.new(@driver)
   #@login.visit url
