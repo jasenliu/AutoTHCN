@@ -1,6 +1,6 @@
 Given('I am on the generate report page') do
 
-  url = 'http://192.168.0.14'
+  url = 'http://192.168.0.14/thcv1'
   username = 'user80008'
   password = 'test.test'
 
