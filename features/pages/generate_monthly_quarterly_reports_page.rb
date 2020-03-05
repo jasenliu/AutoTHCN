@@ -72,6 +72,7 @@ class GenerateMonthlyQuarterlyReports
       retry if !alert_non_interesting_setting
     end
 
+=begin
     begin
       alert_generate_success = @driver.switch_to.alert
       puts alert_generate_success.text
@@ -79,6 +80,7 @@ class GenerateMonthlyQuarterlyReports
     rescue
       retry if !alert_generate_success
     end
+=end
     sleep(3)
 
   end
