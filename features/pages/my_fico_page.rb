@@ -1,17 +1,17 @@
 class MyFicoPage
 
   STATE_LIST = [
-  'National',
-  'Connecticut',
-  'Delaware',
-  'Maine',
-  'Massachusetts',
-  'New Hampshire',
-  'New Jersey',
-  'New York',
-  'Pennsylvania',
-  'Rhode Island',
-  'Vermont'
+  'National'
+  #'Connecticut',
+  #'Delaware',
+  #'Maine',
+  #'Massachusetts',
+  #'New Hampshire',
+  #'New Jersey',
+  #'New York',
+  #'Pennsylvania',
+  #'Rhode Island',
+  #'Vermont'
   ]
 
   LOAN_TYPE_LIST = [
