@@ -8,7 +8,7 @@ Feature: Compare marjor reports
   Scenario: Upload data file
     When select the report cycle
     | report_cycle |
-    | 201906       |
+    | 201912       |
     And select the data type
     | data_type |
     | PATH+     |
