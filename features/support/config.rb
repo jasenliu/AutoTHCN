@@ -27,8 +27,10 @@ REPORT_LIST = [
   'Portfolio Analytics',
   'Real Cash Flow',
   'Two Cycles Comparison',
-  #'Assumption Report', --this report can not saveas
-  'Mortgage Portfolio Analytics'
+  'Assumption Report', #--this report can not saveas
+  'Mortgage Portfolio Analytics',
+  'DASHBOARD',
+  'ALM DASHBOARD'
 ]
 
 FRAME_REPORT_LIST = {
@@ -39,8 +41,10 @@ FRAME_REPORT_LIST = {
   'Portfolio Analytics' => 'ReportProgress4',
   'Real Cash Flow' => 'ReportProgress34_1',
   'Two Cycles Comparison' => 'ReportProgress107',
-  #'Assumption Report' => 'ReportProgress107',
-  'Mortgage Portfolio Analytics' => 'ReportProgress96'
+  'Assumption Report' => 'ReportProgress107',
+  'Mortgage Portfolio Analytics' => 'ReportProgress96',
+  'DASHBOARD' => 'ReportProgress119'
+  'ALM DASHBOARD' => 'ReportProgress120'
 }
 
 FRAME_REPORT_LIST_ID = [

@@ -141,15 +141,9 @@ class GenerateMonthlyQuarterlyReports
 	          frame_report_list.delete(report_name)
 	        end
 	      else
-	        if(frame_id == 'ReportProgress34_1') #cash flow report
-	          @driver.find_elements(:tag_name => 'img')[0].click
-            sleep(2)
-            frame_report_list.delete(report_name)
-          else
-            @driver.find_element(:id => 'rpt_excel').click
-            sleep(2)
-            frame_report_list.delete(report_name)
-          end
+          @driver.find_element(:id => 'rpt_excel').click
+          sleep(2)
+          frame_report_list.delete(report_name)
         end
 
 	      @driver.switch_to.parent_frame
