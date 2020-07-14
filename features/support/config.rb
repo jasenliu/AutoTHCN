@@ -43,7 +43,7 @@ FRAME_REPORT_LIST = {
   'Two Cycles Comparison' => 'ReportProgress107',
   'Assumption Report' => 'ReportProgress107',
   'Mortgage Portfolio Analytics' => 'ReportProgress96',
-  'DASHBOARD' => 'ReportProgress119'
+  'DASHBOARD' => 'ReportProgress119',
   'ALM DASHBOARD' => 'ReportProgress120'
 }
 
