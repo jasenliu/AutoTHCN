@@ -104,55 +104,55 @@ class GenerateMonthlyQuarterlyReports
     until flag
       end_time = Time.now.to_i
       if(end_time - begin_time > 6000)
-	puts 'time is over'
-	$result_14.store('report over', 'genereated report time is over')
-	flag = true
-	break
+	      puts 'time is over'
+	      $result_14.store('report over', 'genereated report time is over')
+	      flag = true
+	      break
       end
 
       if(frame_report_list.size == 0)
-	flag = true
-	break
+	      flag = true
+	      break
       end
 
       frame_report_list.each do |report_name, frame_id|
-	sleep(5)
-	puts "before switch:#{report_name},#{frame_id}"
-	@driver.switch_to.frame(frame_id)
-	puts "after switch:#{report_name},#{frame_id}"
-	begin
-	  progress = @driver.find_element(:id => 'divprogress0')
-	rescue
-	  progress = false
-	end
+	      sleep(5)
+	      puts "before switch:#{report_name},#{frame_id}"
+	      @driver.switch_to.frame(frame_id)
+	      puts "after switch:#{report_name},#{frame_id}"
+	      begin
+	        progress = @driver.find_element(:id => 'divprogress0')
+	      rescue
+	        progress = false
+	      end
 
-	begin
-	  report_error = @driver.find_element(:id => 'divReset')
-	rescue
-	  report_error = false
-	end
+	      begin
+	        report_error = @driver.find_element(:id => 'divReset')
+	      rescue
+	        report_error = false
+	      end
 
-	if progress
-	  #puts progress.text
-	  puts "#{report_name} is generating..."
-	  if report_error
-	    puts "#{report_name} has report error"
-	    $result_14.store(report_name, "#{progress.text} has error")
-	    frame_report_list.delete(report_name)
-	  end
-	else
-	  if(frame_id == 'ReportProgress34_1') #cash flow report
-	    @driver.find_elements(:tag_name => 'img')[1].click
-	    sleep(2)
-	    frame_report_list.delete(report_name)
-	  else
-	    @driver.find_element(:id => 'rpt_excel').click
-	    sleep(2)
-	    frame_report_list.delete(report_name)
-	  end
-	end
+	      if progress
+	        #puts progress.text
+	        puts "#{report_name} is generating..."
+	        if report_error
+	          puts "#{report_name} has report error"
+	          $result_14.store(report_name, "#{progress.text} has error")
+	          frame_report_list.delete(report_name)
+	        end
+	      else
+	        if(frame_id == 'ReportProgress34_1') #cash flow report
+	          @driver.find_elements(:tag_name => 'img')[0].click
+            sleep(2)
+            frame_report_list.delete(report_name)
+          else
+            @driver.find_element(:id => 'rpt_excel').click
+            sleep(2)
+            frame_report_list.delete(report_name)
+          end
+        end
 
-	@driver.switch_to.parent_frame
+	      @driver.switch_to.parent_frame
       end 
     end
   end
