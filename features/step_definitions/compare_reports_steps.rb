@@ -1,6 +1,6 @@
 Given('I am on the generate report page') do
 
-  url = 'http://192.168.0.14/thcv1'
+  url = 'http://192.168.0.14/'
   username = 'user80008'
   password = 'test.test'
 
@@ -17,19 +17,30 @@ Given('I am on the generate report page') do
   #@login.visit url
   @login.login(username, password)
   
-  @left_panel = LeftPanelPage.new(@driver)
-  @left_panel.executive_insights.click
-  @left_panel.generate_reports.click
+  #@left_panel = LeftPanelPage.new(@driver)
+  #@left_panel.executive_insights.click
+  #@left_panel.generate_reports.click
+  
+  @main_menu = MainMenuPage.new(@driver)
+  @main_menu.asset_liability_management.click
+  @main_menu.risk_reports.click
+  @main_menu.generate_view_reports.click
+  
 end
 
 When('select the report cycle') do |table|
+  #report_cycle = table.hashes[0]['report_cycle']
+  #@generate_monthly_quarterly_reports = GenerateMonthlyQuarterlyReports.new(@driver)
+  #@generate_monthly_quarterly_reports.select_report_cycle(report_cycle)
+
   report_cycle = table.hashes[0]['report_cycle']
-  @generate_monthly_quarterly_reports = GenerateMonthlyQuarterlyReports.new(@driver)
-  @generate_monthly_quarterly_reports.select_report_cycle(report_cycle)
+  @main_menu.click_select_cycle
+  @main_menu.select_report_cycle(report_cycle)
 end
 
 And('select the data type') do |table|
   data_type = table.hashes[0]['data_type']
+  @generate_monthly_quarterly_reports = GenerateMonthlyQuarterlyReports.new(@driver)
   @generate_monthly_quarterly_reports.select_data_type(data_type) 
 end
 
