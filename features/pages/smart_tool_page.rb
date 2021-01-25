@@ -68,7 +68,7 @@ class SmartToolPage
   end
 
   def get_validate_and_download_pathbook_button
-    @driver.find_element(:class => 'top').find_elements(:tag_name => 'input')[1]
+    @driver.find_element(:class => 'top').find_elements(:tag_name => 'input')[2]
   end
 
   def get_validation_detail_table
