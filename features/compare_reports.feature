@@ -14,7 +14,7 @@ Feature: Compare marjor reports
     | PATH+     |
     And upload the data file
     | file_path                                                  |
-    | D:\AutoTHCN\lib\data_file\excel_file\benchmark_202012.xlsx |
+    | D:\AutoTHCN\lib\data_file\excel_file\benchmark_202012.xls|
     And click upload data file button
     Then the uploaded file should be show in the PATH+ line
 
