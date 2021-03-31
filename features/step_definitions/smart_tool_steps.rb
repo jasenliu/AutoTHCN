@@ -29,6 +29,7 @@ And /^click the next button for each sector$/ do
       @driver.switch_to.window(handle)
       @smart_tool = SmartToolPage.new(@driver)
       wait_for(60){ @smart_tool.interest_rate_swap_is_displayed? }
+      @smart_tool.close_landing_page
       @smart_tool.click_each_sector
       break
     end

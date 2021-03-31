@@ -79,6 +79,11 @@ class SmartToolPage
     @driver.find_element(:id => 'divValidatePf').find_elements(:tag_name => 'input')[1]
   end
 
+  def close_landing_page
+    sleep(2)
+    @driver.find_element(:id => 'popup-win-close-TreeNodeSetting').click
+  end
+
   def click_each_sector
     SECTOR_NAME_LIST.each do |sector_name|
       puts sector_name
