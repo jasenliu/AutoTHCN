@@ -20,7 +20,7 @@ def send_email_with_attach(to, subject, html, attach_path)
   mail.html = html
   mail.attach(attach_path)
 
-  Net::SMTP.start('smtp.exmail.qq.com', 25, 'smtp.exmail.qq.com', 'jsliu@thc.net.cn', '2018*Dm') { |smtp|
+  Net::SMTP.start('smtp.exmail.qq.com', 25, 'smtp.exmail.qq.com', 'jsliu@thc.net.cn', 'Dm2018*') { |smtp|
     smtp.send_message(mail.to_s, 'jsliu@thc.net.cn', to)
   }
 end
