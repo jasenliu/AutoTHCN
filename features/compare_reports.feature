@@ -8,13 +8,13 @@ Feature: Compare marjor reports
   Scenario: Upload data file
     When select the report cycle
     | report_cycle |
-    | 202209       |
+    | 202212       |
     And select the data type
     | data_type |
     | PATH+     |
     And upload the data file
-    | file_path                                                  |
-    | D:\AutoTHCN\lib\data_file\excel_file\benchmark_202209.xls  |
+    | file_path                                                   |
+    | D:\AutoTHCN\lib\data_file\excel_file\benchmark_202212.xlsx  |
     And click upload data file button
     Then the uploaded file should be show in the PATH+ line
 
