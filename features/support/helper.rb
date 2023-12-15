@@ -52,6 +52,6 @@ def send_compare_report_result
 html_end
 
   erb = ERB.new(html)
-  send_email('eng-thc@thc.net.cn', 'ThcDecisions Compare finished', erb.result(binding))
+  send_email('eng-thc@thchf.com.cn', 'ThcDecisions Compare finished', erb.result(binding))
 end
 
